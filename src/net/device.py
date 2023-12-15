@@ -24,8 +24,8 @@ class myED():
 
 	def send(self, bsDict):
 		for bsid, bs in bsDict.items():
-			if self.id == 0 and bsid == 0:
-				print("Simulation ", self.params.i ,": ", self.params.nrBS, self.params.nrED, self.params.algo, self.params.ps, self.params.period_mn, self.packets[bsid].id)
+			#if self.id == 0 and bsid == 0:
+			#	print("Simulation ", self.params.i ,": ", self.params.nrBS, self.params.nrED, self.params.algo, self.params.ps, self.params.period_mn, self.packets[bsid].id)
 			bs.add(self.packets[bsid].update(self.action))
 		self.time = self.packets[bsid].toa
 		return self.time

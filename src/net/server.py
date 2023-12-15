@@ -2,14 +2,15 @@
 
 import numpy as np
 
-from etc import myann
-from etc import myrandom
-from etc import myqlearning
-from etc import mypolicyiteration
-from etc import myexp3
+#from etc import myann
+# from etc import myrandom
+# from etc import myqlearning
+# from etc import mypolicyiteration
+# from etc import myexp3
 from etc import mythompson
 from etc import myucb
-from etc import myklucb
+# from etc import myklucb
+from etc import myepsilongreedy
 
 
 class myServer:
@@ -23,22 +24,24 @@ class myServer:
 		self.grid				= np.zeros((self.params.nrED, self.params.nrBS))
 
 
-		if self.params.algo   == "Random":
-			self.model = myrandom.Random(self.params)
-		if self.params.algo   == "ANN":
-			self.model = myann.ANN(self.params)
-		elif self.params.algo == "Q-learning":
-			self.model = myqlearning.Qlearning(self.params)
-		elif self.params.algo   == "PolicyIteration":
-			self.model = mypolicyiteration.PolicyIteration(self.params)
-		elif self.params.algo == "EXP3":
-			self.model = myexp3.EXP3(self.params)
-		elif self.params.algo == "Thompson":
+		# if self.params.algo   == "Random":
+		# 	self.model = myrandom.Random(self.params)
+		# elif self.params.algo   == "ANN":
+		# 	self.model = myann.ANN(self.params)
+		# elif self.params.algo == "Q-learning":
+		# 	self.model = myqlearning.Qlearning(self.params)
+		# elif self.params.algo   == "PolicyIteration":
+		# 	self.model = mypolicyiteration.PolicyIteration(self.params)
+		# elif self.params.algo == "EXP3":
+		# 	self.model = myexp3.EXP3(self.params)
+		if self.params.algo == "Thompson":
 			self.model = mythompson.Thompson(self.params)
 		elif self.params.algo == "UCB":
 			self.model = myucb.UCB(self.params)
-		elif self.params.algo == "klUCB":
-			self.model = myklucb.klUCB(self.params)
+		# elif self.params.algo == "klUCB":
+		# 	self.model = myklucb.klUCB(self.params)
+		elif self.params.algo == "EpsilonGreedy":
+			self.model = myepsilongreedy.EpsilonGreedy(self.params)
 		else:
 			print("invalid algorithm")
 			exit(0)

@@ -102,5 +102,3 @@ def local_peaks_indexes(P):
 #from   seaborn import scatterplot  as scatter
 #import mpl_toolkits.mplot3d.axes3d as p3
 #from itertools import cycle, islice
-
-
