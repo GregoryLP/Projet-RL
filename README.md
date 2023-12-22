@@ -14,4 +14,4 @@ cd src
 python main.py
 ```
 Cela lancera le projet
-Changer la 
+Changer la ligne 27 dans le main.py par Thompson, UCB ou epsilonGreedy pour lancer chaque test
